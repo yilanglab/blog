@@ -7,5 +7,19 @@
 </head>
 <body>
 	<div class="bg">Yi-Lang's Lab</div>
+	<div id="box"><a href="box.html">BOX</a></div>
+	<div id="birds"><a href="canvas_geometry_birds.html">BIRDS</a></div>
+	<div id="empty"></div>
+	<script>
+	var box = document.getElementById("box");
+	var birds = document.getElementById("birds");
+		var menu = document.getElementById("empty");
+		menu.onclick = function(){
+			box.style.display="block";
+			box.style.animation = "c1 1s" ;
+			birds.style.display="block";
+			birds.style.animation = "c1 1s" ;
+		}
+	</script>
 </body>
 </html>
