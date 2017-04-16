@@ -4,6 +4,8 @@
 a { text-decoration: none;
 	color: #272897;
 	font-size: 3vw; 
+	width: 16vw;
+	height: 16vw;
 }
 
 body{
@@ -45,6 +47,19 @@ body{
 	line-height: 18vw;
 	top: 25vh;
 	right: 10vw;
+}
+
+#mgtest{
+	position: absolute;
+	text-align: center;
+	width: 18vw;
+	height: 18vw;
+	background: rgba(255, 255, 255, 0.8);
+	display: none;
+	border-radius: 50%;
+	line-height: 18vw;
+	top: 60vh;
+	left: 15vw;
 }
 
 #empty{
