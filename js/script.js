@@ -1,39 +1,33 @@
-var camera, scene, renderer;
-var geometry, material, mesh;
-
-init();
-animate();
-
-function init() {
-
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
-    camera.position.z = 1000;
-
-    scene = new THREE.Scene();
-
-    geometry = new THREE.BoxGeometry(200, 200, 200);
-    material = new THREE.MeshBasicMaterial({
-        color: 99999999,
-        wireframe: true
-    });
-
-    mesh = new THREE.Mesh(geometry, material);
-    scene.add(mesh);
-
-    renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-
-    document.body.appendChild(renderer.domElement);
-
+// 获取ID快捷方式
+function byId(id){
+  return typeof(id)==="string"?document.getElementById(id):id;
 }
 
-function animate() {
+// 首页视差滚动
+  jQuery(document).ready(function(){
+      var target = jQuery("#target");
+      
+      target
+      .children()
+      .parallax(
+          { mouseport: target },
+          { xparallax: 0.05, yparallax: 0.08,xorigin:-0.2,yorigin:0.2},   // Green layer options
+          { xparallax: -0.03, yparallax: 0.1,xorigin:0.8,yorigin:0.35}                                      // Red layer options
+      );
+  });
 
-    requestAnimationFrame(animate);
+// 菜单划过显示信息
+var menulis = ['关 于 白 熊','表 情 包','海 报','漫 画','杂 物 间','关 于 作 者']
+var menudivs = byId('mover').getElementsByTagName("div");
 
-    mesh.rotation.x += 0.01;
-    mesh.rotation.y += 0.02;
-
-    renderer.render(scene, camera);
-
+for(var i=0;i<menudivs.length;i++){
+  menudivs[i].i=i
+  menudivs[i].onmouseover = function (){
+    this.style.background = '#171c61';
+    this.innerHTML=menulis[this.i];
+  };
+  menudivs[i].onmouseout = function (){
+    this.style.background = 'none';
+    this.innerHTML=" ";
+  }
 }

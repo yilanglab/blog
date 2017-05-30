@@ -2,30 +2,46 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Yi Lang's Lab</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<title>Bear Blue</title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="bg">Yi-Lang's Lab</div>
-	<div id="box"><a href="canvas_geometry_hierarchy.html">CUBE</a></div>
-	<div id="birds"><a href="canvas_geometry_birds.html">BIRDS</a></div>
-	<div id="mgtest"><a href="mgtest.html">MANGA</a></div>
-	<div id="empty"></div>
-	<script>
-	var box = document.getElementById("box");
-	var birds = document.getElementById("birds");
-	var mgtest = document.getElementById("mgtest");
-		var menu = document.getElementById("empty");
+	<div class="banner">
+		<div id="update">Y i - L a n g</div>
+		<div class="info">
+			===2017/05/29===
+			<br>
+			起草网站的基本框架，收集需要的素材和技术。
+			<br>
+			===2017/05/30===
+			<br>
+			一个小问题卡了很久，解决过程中知道了“闭包”这个概念。
+			<br>
+			基本建立了网站的框架（虽然很粗糙）。
+		</div>
+		<div id="target" class="parallax-layer">
+			<img class="bannerbg" src="images/bearhead.png" alt="">
+			<div class="bannerTitle">
+				<p>白 熊 时 间</p>
+				<p>B E A R B L U E</p>
+			</div>
+		</div>
+		<img class="bannerIcon" src="images/banner.gif" alt="">
+		<div class="menu">
+			<ul id="mover">
+				<li><div></div><img src="images/menu/menuimgs1.jpg" alt=""></li>
+				<li><div></div><img src="images/menu/menuimgs2.jpg" alt=""></li>
+				<li><div></div><img src="images/menu/menuimgs3.jpg" alt=""></li>
+				<li><div></div><img src="images/menu/menuimgs4.jpg" alt=""></li>
+				<li><div></div><img src="images/menu/menuimgs5.jpg" alt=""></li>
+				<li><div></div><img src="images/menu/menuimgs6.jpg" alt=""></li>
+			</ul>
+		</div>
+	</div>
 
-		menu.onclick = function(){
-			box.style.display="block";
-			box.style.animation = "c1 1s" ;
-			birds.style.display="block";
-			birds.style.animation = "c1 1s" ;
-			mgtest.style.display="block";
-			mgtest.style.animation = "c1 1s" ;
-
-		}
-	</script>
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.parallax.js"></script>
+	<script src="js/script.js"></script>
+	
 </body>
 </html>
