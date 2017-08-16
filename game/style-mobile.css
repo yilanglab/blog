@@ -5,13 +5,13 @@ html {
 body, canvas, div {
   display: block;
   outline: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 255);
 
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   -khtml-user-select: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 255);
 }
 
 /* Remove spin of input type number */
@@ -34,7 +34,7 @@ body {
 
   cursor: default;
   color: #888;
-  background-color: #333;
+  background-color: #fff;
 
   text-align: center;
   font-family: Helvetica, Verdana, Arial, sans-serif;
@@ -57,7 +57,7 @@ body {
 }
 
 canvas {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(255, 255, 255, 255);
 }
 
 a:link, a:visited {
@@ -82,7 +82,7 @@ p.footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #171717 url(./splash.png) no-repeat center;
+  background: #171c61 url(./splash.png) no-repeat center;
   background-size: 40%;
 }
 
@@ -90,7 +90,7 @@ p.footer {
     background-color: #1a1a1a;
     position: absolute;
     left: 25%;
-    top: 80%;
+    top: 70%;
     height: 15px;
     padding: 5px;
     width: 50%;
