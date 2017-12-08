@@ -14,6 +14,7 @@
 // }
 
 var value = 0;
+var value2 = 0;
 
 function draw() {
   fill(value);
