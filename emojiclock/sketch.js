@@ -82,12 +82,12 @@ function preload(){
 
 
 function setup() {
-	createCanvas(375, 667);
-	s = second();
+  createCanvas(windowWidth,windowHeight);
+  s = second();
   background(255);
-	textSize(48);
-	text('E M O J I', 87, 150);
-  text('C L O C K', 84, 555);
+  textSize(48);
+  text('E M O J I', windowWidth/2-100, windowHeight/2-200);
+  text('C L O C K', windowWidth/2-105, windowHeight/2+240);
 
   imageMode(CENTER);
   ellipseMode(CENTER);
@@ -96,7 +96,7 @@ function setup() {
 
 function draw() {
   
-	// background(255);
+  // background(255);
   
   noStroke();
   ellipse(width / 2, height / 2,340,340);
@@ -104,57 +104,57 @@ function draw() {
   ellipse(width / 2, height / 2,320,320);
   // ellipse((width / 2)+v.x, (height / 2)+v.y,20,20);
   
-	translate(188,334);
+  translate(windowWidth/2,windowHeight/2);
   // tint(255,100);
   // image(img[0], 0, 0,128,128);
   
-	if(s != second()){
-		let p = new Particle();
-		particles.push(p);
+  if(s != second()){
+    let p = new Particle();
+    particles.push(p);
     particles[particles.length-1].emoji = int(random(0,10));
     print(emojiProb[hour()][particles[particles.length-1].emoji]);
-		s = second()
-	}
-	
-	for (let i = particles.length-1; i>=0; i--){
+    s = second()
+  }
+  
+  for (let i = particles.length-1; i>=0; i--){
     // let t = emojiProb[hour()][particles[particles.length-1].emoji]
     // image(img[t], 0, 0,128,128);
-		particles[i].show();
-		particles[i].update();
-		if (particles[i].finished()){
-			particles.splice(i,1);
-		}
-	}
+    particles[i].show();
+    particles[i].update();
+    if (particles[i].finished()){
+      particles.splice(i,1);
+    }
+  }
 }
 
 class Particle {
-	constructor(){
+  constructor(){
     let p = p5.Vector.fromAngle(radians((hour()%12)*30+(minute()/2)-90), 150);
     let v = p5.Vector.fromAngle(radians((hour()%12)*30+(minute()/2)-90+random(-5,5)), 2);
-		this.x = p.x;
-		this.y =p.y;
-		this.vx = v.x;
-		this.vy = v.y;
-		this.alpha = 255;
+    this.x = p.x;
+    this.y =p.y;
+    this.vx = v.x;
+    this.vy = v.y;
+    this.alpha = 255;
     this.emoji = 0;
-	}
-	
-	finished(){
-		// return this.alpha <0;
+  }
+  
+  finished(){
+    // return this.alpha <0;
     return dist(0, 0, this.x, this.y)>=168;
     
-	}
-	
-	update(){
+  }
+  
+  update(){
     
-		this.x-=this.vx;
-		this.y-=this.vy;
-		// this.x-=p.x;
-		// this.y-=p.y;
-		this.alpha -= 2;
-	}
-	
-	show(){
+    this.x-=this.vx;
+    this.y-=this.vy;
+    // this.x-=p.x;
+    // this.y-=p.y;
+    this.alpha -= 2;
+  }
+  
+  show(){
 
     tint(255,this.alpha);
     // image(img[emojiProb[11][this.emoji]], this.x, this.y,32,32);
@@ -162,5 +162,5 @@ class Particle {
     
     
     
-	}
+  }
 }
