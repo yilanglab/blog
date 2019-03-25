@@ -54,16 +54,18 @@ function draw() {
 	}
   
   noStroke();
-  textSize(100);
   textFont(numFont);
   fill(255,200,0,220);
-	text(nfc(secSalary*secNow+a,6), 120, -10);
-  text(nfc(secSalary*secNow+a,6), -100, 80);
-  a+=frSalary;
-  
   textSize(72);
+  textAlign(CENTER);
   text('MONEY',0,-96);
   text('CLOCK',0,146);
+  textSize(100);
+  textAlign(LEFT);
+  text(nfc(secSalary*secNow+a,6), -150, -10);
+  textAlign(RIGHT);
+  text(nfc(secSalary*secNow+a,6),160, 80);
+  a+=frSalary;
 
   push();
   noFill();
