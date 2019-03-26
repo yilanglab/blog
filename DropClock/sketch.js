@@ -4,8 +4,8 @@ let ripplesS=[];
 let s;
 
 function setup() {
-  // createCanvas(windowWidth,windowHeight);
-  createCanvas(375,667);
+  createCanvas(windowWidth,windowHeight);
+  // createCanvas(375,667);
   s = second();
   ellipseMode(CENTER);
   angleMode(DEGREES);
