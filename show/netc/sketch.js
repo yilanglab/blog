@@ -168,12 +168,12 @@ function Loc() {
   this.h = hour();
   this.m = minute();
   this.s = second();
-  this.hourX = p5.Vector.fromAngle(radians(this.h%12*30+this.m/2-90), 60).x;
-  this.hourY = p5.Vector.fromAngle(radians(this.h%12*30+this.m/2-90), 60).y;
-  this.minX = p5.Vector.fromAngle(radians(this.m*6-90), 90).x;
-  this.minY = p5.Vector.fromAngle(radians(this.m*6-90), 90).y;
-  this.secX = p5.Vector.fromAngle(radians(this.s*6-90), 150).x;
-  this.secY = p5.Vector.fromAngle(radians(this.s*6-90), 150).y;
+  this.hourX = p5.Vector.fromAngle(radians(this.h%12*30+this.m/2), 60).x;
+  this.hourY = p5.Vector.fromAngle(radians(this.h%12*30+this.m/2), 60).y;
+  this.minX = p5.Vector.fromAngle(radians(this.m*6), 90).x;
+  this.minY = p5.Vector.fromAngle(radians(this.m*6), 90).y;
+  this.secX = p5.Vector.fromAngle(radians(this.s*6), 150).x;
+  this.secY = p5.Vector.fromAngle(radians(this.s*6), 150).y;
   //调用以角度和与原点距离计算位置的函数，实现时分秒的位置计算：
   //p5.Vector.fromAngle(角度，与原点的距离)
   this.update = function(){ 
@@ -182,12 +182,12 @@ function Loc() {
     if(this.s >= 60){this.s = 0;}
     this.s +=1/30;
     // this.s = second();
-    this.hourX = p5.Vector.fromAngle(radians(this.h%12*30+this.m/2-90), 60).x;
-    this.hourY = p5.Vector.fromAngle(radians(this.h%12*30+this.m/2-90), 60).y;
-    this.minX = p5.Vector.fromAngle(radians(this.m*6-90), 90).x;
-    this.minY = p5.Vector.fromAngle(radians(this.m*6-90), 90).y;
-    this.secX = p5.Vector.fromAngle(radians(this.s*6-90), 150).x;
-    this.secY = p5.Vector.fromAngle(radians(this.s*6-90), 150).y;
+    this.hourX = p5.Vector.fromAngle(radians(this.h%12*30+this.m/2), 60).x;
+    this.hourY = p5.Vector.fromAngle(radians(this.h%12*30+this.m/2), 60).y;
+    this.minX = p5.Vector.fromAngle(radians(this.m*6), 90).x;
+    this.minY = p5.Vector.fromAngle(radians(this.m*6), 90).y;
+    this.secX = p5.Vector.fromAngle(radians(this.s*6), 150).x;
+    this.secY = p5.Vector.fromAngle(radians(this.s*6), 150).y;
   }
 }
 
