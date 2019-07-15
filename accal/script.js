@@ -6,6 +6,11 @@
 // }
 // setWH();
 
+function play(){
+	document.getElementById("audio").currentTime = 0;
+    document.getElementById("audio").play();
+}
+
 document.getElementById("butt").addEventListener("touchstart", touch);
 document.getElementById("butt").addEventListener('touchend', touch);
 function touch(event) {
@@ -29,9 +34,4 @@ function touch(event) {
             break;
         
     }
-}
-
-function play(){
-	document.getElementById("audio").currentTime = 0;
-    document.getElementById("audio").play();
 }
