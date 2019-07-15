@@ -16,6 +16,7 @@ function touch(event) {
 
     switch (event.type) {
         case "touchstart":
+        	play();
             acbutton.src = "buttonDown.png";
             num.style.display = "none";
     		var timer = setTimeout(function(){
