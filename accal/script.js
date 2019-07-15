@@ -1,13 +1,4 @@
-﻿function CCol(){
-	var buttonAC = document.getElementById("butt");
-	buttonAC.style.background="black";
-}
-
-function CCol2(){
-	var buttonAC = document.getElementById("butt");
-	buttonAC.style.background="pink";
-}
-
+﻿
 // function setWH(){
 // 	var bgW = window.innerWidth+"px";
 // 	var bgH = window.innerheight+"px";
@@ -20,14 +11,26 @@ document.getElementById("butt").addEventListener('touchend', touch);
 function touch(event) {
     /**兼用 IE 浏览器*/
     var event = event || window.event;
-    var obj = document.getElementById("butt");
+    var acbutton = document.getElementById("butt");
+    var num = document.getElementById("num");
+
     switch (event.type) {
         case "touchstart":
-            obj.src = "buttonDown.png";
+            acbutton.src = "buttonDown.png";
+            num.style.display = "none";
+    		var timer = setTimeout(function(){
+    			var num = document.getElementById("num");
+    			num.style.display = "block";
+    		},200);
             break;
         case "touchend":
-            obj.src = "buttonUp.png";
+            acbutton.src = "buttonUp.png";
             break;
         
     }
+}
+
+function play(){
+	document.getElementById("audio").currentTime = 0;
+    document.getElementById("audio").play();
 }
