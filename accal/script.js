@@ -7,6 +7,7 @@
 // setWH();
 
 function play(){
+	document.getElementById("audio").pause();
 	document.getElementById("audio").currentTime = 0;
     document.getElementById("audio").play();
 }
