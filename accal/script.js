@@ -10,11 +10,10 @@ function CCol2(){
 
 // function setWH(){
 // 	var bgW = window.innerWidth+"px";
-// 	var bgH = window.offsetheight+"px";
-// 	var backg = document.getElementById("bg");
-// 	bg.style.width=bgW;
-// 	bg.style.height=bgH;
+// 	var bgH = window.innerheight+"px";
+// 	alert(bgW,bgH);
 // }
+// setWH();
 
 document.getElementById("butt").addEventListener("touchstart", touch);
 document.getElementById("butt").addEventListener('touchend', touch);
