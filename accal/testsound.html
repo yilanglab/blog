@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+ <head>
+  <title> new document </title>   
+
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no, target-densitydpi=device-dpi" /> 
+
+ </head> 
+ <body id="butt"> 
+  <script src="howler.core.js"></script>
+<script>
+  var sound = new Howl({
+    src: ['AC.mp3']
+  });
+
+document.addEventListener("touchstart", touch);
+document.addEventListener('touchmove', touch);
+document.addEventListener('touchend', touch);
+function touch(event) {
+    /**兼用 IE 浏览器*/
+    var event = event || window.event;
+    var acbutton = document.getElementById("butt");
+
+    switch (event.type) {
+        case "touchstart":
+            acbutton.style.background = "pink";
+            sound.stop();
+            sound.play();
+            break;
+        case "touchend":
+            acbutton.style.background = "white";
+            break;
+        case "touchmove":
+            acbutton.style.background = "pink";
+            break;
+    }
+}
+
+</script>
+ </body>
+</html>
