@@ -10,8 +10,7 @@ var guiling = new Howl({
     src: ['audio/AC.mp3']
   });
 var clicksound = new Howl({
-    src: ['audio/click.mp3'],
-    volume: 0.5
+    src: ['audio/click.mp3']
   });
 
 document.getElementById("butt").addEventListener("touchstart", touch);
@@ -27,7 +26,7 @@ function touch(event) {
         	guiling.stop();
             guiling.play();
             clicksound.play();
-            acbutton.src = "img/buttonDown.png";
+            acbutton.src = "img/buttonDown1.png";
             var num = document.getElementById("num");
             num.style.display = "none";
     		var timer = setTimeout(function(){
@@ -36,10 +35,10 @@ function touch(event) {
     		},200);
             break;
         case "touchend":
-            acbutton.src = "img/buttonUp.png";
+            acbutton.src = "img/buttonUp1.png";
             break;
         case "touchmove":
-            acbutton.src = "img/buttonDown.png";
+            acbutton.src = "img/buttonDown1.png";
             break;
     }
 }
