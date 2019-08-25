@@ -33,11 +33,9 @@
 <body>
 	 <div>
 		<video id="video" 
-		x-webkit-airplay="allow" 
-      x5-video-player-fullscreen="true"
-      x5-video-orientation="portraint"
-      style="object-fit:fill"
-		src="100.mp4" preload="auto" x5-video-player-type="h5" x-webkit-airplay="true" airplay="allow" playsinline="" webkit-playsinline="">
+      	style="object-fit:fill;display: block;"
+		src="100.mp4" preload="auto" autoplay="autoplay"
+		x-webkit-airplay="true" webkit-playsinline="true" playsinline>
 		your browser does not support the video tag
 	</video>
 	</div>
@@ -48,17 +46,25 @@
 
 	<script>
 		var myvideo = document.getElementById("video");
+	document.getElementById("video").addEventListener("touchstart", function(){
+	if(myvideo.paused){
 		myvideo.play();
-// 	document.getElementById("video").addEventListener("touchstart", function(){
-// 	if(myvideo.paused){
-// 		myvideo.play();
-// 	}else {
-// 		myvideo.pause();
-// 		}
-// 	});
-// 	document.getElementById("10s").addEventListener("touchstart",function(){
-// 		myvideo.currentTime=10;
-// 	});
+	}else {
+		myvideo.pause();
+		}
+	});
+
+	document.getElementById("video").addEventListener("ended", function(){
+		document.getElementById("video").style.display = 'none';
+	});
+
+	// if(myvideo.ended){
+	// 	// document.getElementById("video").style.display = 'none';
+	// 	document.getElementById("play").style.color = 'blue';
+	// }
+	document.getElementById("10s").addEventListener("touchstart",function(){
+		myvideo.currentTime=10;
+	});
 // 	document.querySelector('body').addEventListener('touchmove', function(e) {
 // 　　e.preventDefault();
 // });
