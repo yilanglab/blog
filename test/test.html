@@ -20,7 +20,7 @@
 		}
 
 	video{
-		height: 100vh;
+		height: 100vw;
 		position: absolute;
 	}
 
@@ -49,7 +49,7 @@
 	<script>
 		var myvideo = document.getElementById("video");
 		var tID;
-	document.getElementById("play").onclick = function(){
+	document.getElementById("video").onclick = function(){
 	if(myvideo.paused){
 		// document.getElementById("play").style.background-color = "blue";
 		myvideo.play();
