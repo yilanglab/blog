@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="email=no" name="format-detection">
+	<meta name="screen-orientation" content="portrait">
+
+	<title>codingSketch</title>
+	
+	<style>
+
+	body{
+    margin: 0;
+    padding: 0;
+		}
+
+	#words1{
+	text-align:center;
+	background-color: pink;
+	font-size: 64px;
+	}
+
+	#words2{
+	text-align:center;
+	background-color: pink;
+	font-size: 64px;
+	}
+
+	#words3{
+	text-align:center;
+	background-color: pink;
+	font-size: 64px;
+	}
+
+	#dButton{
+	text-align:center;
+	background-color: yellowgreen;
+	font-size: 64px;
+	}
+
+	</style>
+
+	<script type="text/javascript" src="lists/species.js"></script>
+	<script type="text/javascript" src="lists/emotions.js"></script>
+	<script type="text/javascript" src="lists/occupations.js"></script>
+
+</head>
+<body>
+	 <div id="words1">
+		<p id="texts1" style="margin: 0,auto">
+			- 抽取三词 -
+		</p>
+	</div>
+	<div id="words2">
+		<p id="texts2" style="margin: 0,auto">
+			- 抽取三词 -
+		</p>
+	</div>
+	<div id="words3">
+		<p id="texts3" style="margin: 0,auto">
+			- 抽取三词 -
+		</p>
+	</div>
+	<div id="dButton">
+		<p style="margin: 0,auto">
+			按钮
+		</p>
+	</div>
+
+	<script>
+		var words1 = document.getElementById("words1");
+		var words2 = document.getElementById("words2");
+		var words3 = document.getElementById("words3");
+		
+		var texts1 = document.getElementById("texts1");
+		var texts2 = document.getElementById("texts2");
+		var texts3 = document.getElementById("texts3");
+
+		var dButton = document.getElementById("dButton");
+		var cols = ["pink","red","blue","yellow","yellowgreen","purple","grey"];
+		var num1 = Math.floor(Math.random()*461);
+		var num2 = Math.floor(Math.random()*27);
+		var num3 = Math.floor(Math.random()*166);
+		var drawing = false;
+		var int;
+
+		document.getElementById("dButton").addEventListener("mousedown",function(){
+			if(!drawing){
+				drawing = true;
+				int = self.setInterval(function(){
+				words1.style.background = species[num1];
+				texts1.innerHTML = species[num1];
+				words2.style.background = emotions[num2];
+				texts2.innerHTML = emotions[num2];
+				words3.style.background = occupations[num3];
+				texts3.innerHTML = occupations[num3];
+				// if(num<7){
+				// 	num += 1;
+				// }else{
+				// 	num = 0;
+				// }
+				num1 = Math.floor(Math.random()*461);
+				num2 = Math.floor(Math.random()*27);
+				num3 = Math.floor(Math.random()*166);
+				}, 50);
+			}
+			dButton.style.background = 'green';
+		});
+
+		document.getElementById("dButton").addEventListener("mouseup",function(){
+			clearInterval(int);
+			drawing = false;
+			dButton.style.background = 'yellowgreen';
+		});
+
+	</script>
+</body>
+</html>
