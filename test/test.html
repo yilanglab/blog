@@ -24,9 +24,26 @@
 		position: absolute;
 	}
 
-	.mycontrols{
+	#mycontrols{
 		position: relative;
 	}
+
+	#texts{
+		position: relative;
+		top: 90vw;
+		margin: auto;
+		padding-top: 10px;
+	}
+
+	#button1{
+		position: relative;
+		background: #ffffff;
+		/*opacity: 0.2;*/
+		top: 464px;
+		margin: auto;
+		padding: 8px 50px 0px;
+	}
+
 
 	</style>
 </head>
@@ -34,40 +51,110 @@
 	 <div>
 		<video id="video" 
       	style="object-fit:fill;display: block;"
-		src="100.mp4" preload="auto" autoplay="autoplay"
+		src="testVDO.mp4" preload="auto" autoplay="autoplay"
 		x-webkit-airplay="true" webkit-playsinline="true" playsinline>
 		your browser does not support the video tag
 	</video>
 	</div>
 	<div id="mycontrols" class="mycontrols" style="text-align:center;">
-		<div id="play"; style="color:white;height: 50px">play</div>
-		<div id="10s"; style="color:white;height: 50px" >10s</div>
+		<div id="texts"; style="color:white;height: 40px;width: 80px;">点击开始第1段</div>
+		<div id="button1"; style="color:black;height: 40px;width: 120px;"></div>
 	</div>
 
-	<script>
+	<script type="text/javascript">
 		var myvideo = document.getElementById("video");
-	document.getElementById("video").addEventListener("touchstart", function(){
-	if(myvideo.paused){
-		myvideo.play();
-	}else {
-		myvideo.pause();
+		var texts = document.getElementById("texts");
+		var steps = 1;
+
+		// var timer1;
+		// var timing = 0;
+		// texts.innerHTML = timing;
+
+	// 第一段 //
+	var b1 = document.getElementById("button1");
+	b1.addEventListener("touchstart", function(){
+		if(steps == 1){
+				b1.style.background = 'none';
+				if(myvideo.paused){
+				myvideo.play();
+				clearTimeout(timer);
+				texts.innerHTML = "第1段进行";
+				// timer1=setInterval(function () {
+    //     		    timing+=50;
+    //     		    texts.innerHTML = timing;
+    //     		},50);
+
+				var timer = setTimeout(function () {
+					myvideo.pause();
+					// clearInterval(timer1);
+					texts.innerHTML = "点击开始第2段";
+					steps = 2;
+				},13250);
+			}
+		}else if(steps == 2){
+
+				if(myvideo.paused){
+				myvideo.play();
+				clearTimeout(timer);
+				texts.innerHTML = "第2段进行";
+				// timer1=setInterval(function () {
+    //     		    timing+=50;
+    //     		    texts.innerHTML = timing;
+    //     		},50);
+
+				var timer = setTimeout(function () {
+					myvideo.pause();
+					// clearInterval(timer1);
+					texts.innerHTML = "第3段开始";
+					steps = 3;
+				},13250);
+			}
+		}else if(steps == 3){
+
+				if(myvideo.paused){
+				myvideo.play();
+				clearTimeout(timer);
+				texts.innerHTML = "第3段进行";
+				// timer1=setInterval(function () {
+    //     		    timing+=50;
+    //     		    texts.innerHTML = timing;
+    //     		},50);
+
+				var timer = setTimeout(function () {
+					myvideo.pause();
+					// clearInterval(timer1);
+					texts.innerHTML = "第3段开始";
+				},10500);
+			}
 		}
 	});
 
+
+	// var timer;
+	// var timing = 0;
+	// texts.innerHTML = timing;
+
+	// b1.addEventListener("touchstart", function(){
+
+	// if(myvideo.paused){
+	// 	myvideo.play();
+	// 	timer=setInterval(function () {
+ //            timing+=50;
+ //            texts.innerHTML = timing;
+ //        },50);
+	// }else {
+	// 	myvideo.pause();
+	// 	clearInterval(timer);
+	// 	}
+	// });
+	
+
+	// 视频结束后 //
 	document.getElementById("video").addEventListener("ended", function(){
 		document.getElementById("video").style.display = 'none';
 	});
 
-	// if(myvideo.ended){
-	// 	// document.getElementById("video").style.display = 'none';
-	// 	document.getElementById("play").style.color = 'blue';
-	// }
-	document.getElementById("10s").addEventListener("touchstart",function(){
-		myvideo.currentTime=10;
-	});
-// 	document.querySelector('body').addEventListener('touchmove', function(e) {
-// 　　e.preventDefault();
-// });
+
 	</script>
 </body>
 </html>
