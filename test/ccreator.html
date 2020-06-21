@@ -22,25 +22,25 @@
 	#words1{
 	text-align:center;
 	background-color: pink;
-	font-size: 64px;
+	font-size: 32px;
 	}
 
 	#words2{
 	text-align:center;
 	background-color: pink;
-	font-size: 64px;
+	font-size: 32px;
 	}
 
 	#words3{
 	text-align:center;
 	background-color: pink;
-	font-size: 64px;
+	font-size: 32px;
 	}
 
 	#dButton{
 	text-align:center;
 	background-color: yellowgreen;
-	font-size: 64px;
+	font-size: 32px;
 	}
 
 	</style>
@@ -51,6 +51,11 @@
 
 </head>
 <body>
+	<div id="dButton">
+		<p style="margin: 0,auto">
+			按钮
+		</p>
+	</div>
 	 <div id="words1">
 		<p id="texts1" style="margin: 0,auto">
 			- 抽取三词 -
@@ -64,11 +69,6 @@
 	<div id="words3">
 		<p id="texts3" style="margin: 0,auto">
 			- 抽取三词 -
-		</p>
-	</div>
-	<div id="dButton">
-		<p style="margin: 0,auto">
-			按钮
 		</p>
 	</div>
 
@@ -99,11 +99,7 @@
 				texts2.innerHTML = emotions[num2];
 				words3.style.background = occupations[num3];
 				texts3.innerHTML = occupations[num3];
-				// if(num<7){
-				// 	num += 1;
-				// }else{
-				// 	num = 0;
-				// }
+
 				num1 = Math.floor(Math.random()*842);
 				num2 = Math.floor(Math.random()*27);
 				num3 = Math.floor(Math.random()*166);
@@ -113,6 +109,31 @@
 		});
 
 		document.getElementById("dButton").addEventListener("mouseup",function(){
+			clearInterval(int);
+			drawing = false;
+			dButton.style.background = 'yellowgreen';
+		});
+
+		document.getElementById("dButton").addEventListener("touchstart",function(){
+			if(!drawing){
+				drawing = true;
+				int = self.setInterval(function(){
+				words1.style.background = species[num1];
+				texts1.innerHTML = species[num1];
+				words2.style.background = emotions[num2];
+				texts2.innerHTML = emotions[num2];
+				words3.style.background = occupations[num3];
+				texts3.innerHTML = occupations[num3];
+
+				num1 = Math.floor(Math.random()*842);
+				num2 = Math.floor(Math.random()*27);
+				num3 = Math.floor(Math.random()*166);
+				}, 50);
+			}
+			dButton.style.background = 'green';
+		});
+
+		document.getElementById("dButton").addEventListener("touchend",function(){
 			clearInterval(int);
 			drawing = false;
 			dButton.style.background = 'yellowgreen';
