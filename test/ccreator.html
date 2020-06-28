@@ -25,24 +25,32 @@
 	text-align:center;
 	background-color: pink;
 	font-size: 32px;
+	padding: 8px;
+	margin-bottom: 4px;
 	}
 
 	#words2{
 	text-align:center;
 	background-color: pink;
 	font-size: 32px;
+	padding: 8px;
+	margin-bottom: 4px;
 	}
 
 	#words3{
 	text-align:center;
 	background-color: pink;
 	font-size: 32px;
+	padding: 8px;
+	margin-bottom: 4px;
 	}
 
 	#dButton{
 	text-align:center;
 	background-color: yellowgreen;
 	font-size: 32px;
+	padding: 8px;
+	margin-bottom: 4px;
 	}
 
 	</style>
@@ -54,19 +62,18 @@
 </head>
 <body>
 	 <div id="words1">
-		<p id="texts1" style="margin: 0,auto">
+		<p id="texts1" style="padding: 22.5px;margin: 0">
 			- 抽取三词 -
 		</p>
 	</div>
 	<div id="words2">
-		<p id="texts2" style="margin: 0,auto">
+		<p id="texts2" style="padding: 22.5px;margin: 0">
 			- 抽取三词 -
 		</p>
 	</div>
 	<div id="words3">
-		<p id="texts3" style="margin: 0,auto">
+		<p id="texts3" style="padding: 22.5px; margin: 0">
 			- 抽取三词 -
-			<br/>　
 		</p>
 	</div>
 	<div id="dButton">
@@ -88,7 +95,7 @@
 		var cols = ["pink","red","blue","yellow","yellowgreen","purple","grey"];
 		var num1 = Math.floor(Math.random()*460);
 		var num2 = Math.floor(Math.random()*27);
-		var num3 = Math.floor(Math.random()*165);
+		var num3 = Math.floor(Math.random()*164);
 		var drawing = false;
 		var int;
 
@@ -101,11 +108,12 @@
 				words2.style.background = emotions[num2];
 				texts2.innerHTML = emotions[num2];
 				words3.style.background = occupations[num3];
+				texts3.style.padding = "0";
 				texts3.innerHTML = occupations[num3];
 
 				num1 = Math.floor(Math.random()*460);
 				num2 = Math.floor(Math.random()*27);
-				num3 = Math.floor(Math.random()*165);
+				num3 = Math.floor(Math.random()*164);
 				}, 50);
 			}
 			dButton.style.background = 'green';
@@ -126,11 +134,12 @@
 				words2.style.background = emotions[num2];
 				texts2.innerHTML = emotions[num2];
 				words3.style.background = occupations[num3];
+				texts3.style.padding = "0";
 				texts3.innerHTML = occupations[num3];
 
 				num1 = Math.floor(Math.random()*460);
 				num2 = Math.floor(Math.random()*27);
-				num3 = Math.floor(Math.random()*165);
+				num3 = Math.floor(Math.random()*164);
 				}, 50);
 			}
 			dButton.style.background = 'green';
