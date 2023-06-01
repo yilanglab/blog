@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>设计方法展示</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>设计方法展示</h1>
+    <table id="designMethodsTable">
+        <tr>
+            <th>设计方法</th>
+            <th>AI辅助方式</th>
+            <th>应用举例</th>
+        </tr>
+    </table>
+
+    <script>
+    fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+        // 获取表格元素
+        var table = document.getElementById('designMethodsTable');
+
+        // 遍历数据，为每个对象创建一个新的行
+        for (var i = 0; i < data.length; i++) {
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            cell1.innerHTML = data[i]["设计方法"];
+            cell2.innerHTML = data[i]["辅助方式"];
+            cell3.innerHTML = data[i]["应用举例"];
+        }
+    })
+    .catch(error => console.error('Error:', error));
+    </script>
+
+</body>
+</html>
